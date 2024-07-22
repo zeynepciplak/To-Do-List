@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root{/* sözde sınıf , kök elemen hangisiyse onu seçer, html den daha öncelikli,bu şekilde değişken oluşturuyorum.*/
+    --primary-color:#33729c;
+    --secondary-color:#1afc79;
+
+}
+body{
+    font-family: 'Montserrat',sans-serif;
+    margin:0;/* Tüm kenar boşluklarını sıfırlar */
+    padding:0;/* Tüm iç boşlukları sıfırlar */
+    display:flex;/*içerisinde öğeler  uyugn bir şekilde boyutlandırılarak esnek kapsayıcı içerisinde sıralanır. */
+    justify-content: center;/* Çocuk öğeleri yatayda ortalar */
+    align-items: center;/* Çocuk öğeleri dikeyde ortalar */
+    height: 100vh; /* Yüksekliği viewport yüksekliğinin %100'ü olarak ayarlar */
+    background:linear-gradient(33deg,var(--primary-color),var(--secondary-color))
+}
+.container{
+    width:400px;
+    background-color: #fff;
+    border-radius: 8px;/*yuvarlak kenar*/
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);/*gölgelendirme efekti*/
+    padding:20px;
+    
+}
+h1{
+    text-align: center;
+    color:var(--primary-color);
+}
+.input-container{
+    display:flex;
+    margin-bottom:20px;
+}
+input[type="text"]{
+    padding:10px;
+    border:1px solid #544b4b;
+    border:5px;
+    border-radius: 4px;
+    flex:1;
+}
+button{
+    padding:10px;
+    background-color: var(--primary-color);
+    border:none;
+    color:#fff;
+    cursor: pointer;/*fare imleci alana geldiğinde el simgesi oluşur*/
+}
+button:hover{
+    background-color: var(--secondary-color);
+}
+ul{
+    list-style-type:none;
+    padding: 0;
+}
+li{
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #3a3636;
+    animation: fadeIn 0.5s ease ;
+
+}
+li:last-child{/*li elemanlarının sonuncusundan sonra çizgi gözükmesini istemediğim için*/
+    border-bottom: none;
+}
+span{
+    flex:1;
+    white-space: nowrap;/*yazımız çok uzun olursa devam etmek yerine ... şeklinde gözükücek*/
+    overflow: hidden;/*taşanı gizlemek için*/
+    margin-right:10px ;
+    text-overflow: ellipsis;
+
+}
+.completed span{
+    text-decoration: line-through;
+    color:#999;
+}
+.completed button{
+    color:#ffffff;
+}
+@keyframes fadeIn{
+from{
+    transform: translateY(-10px);
+    opacity: 0;
+}
+to{
+    opacity: 1;
+    transform:translateY(0) ;
+}
+}
+@keyframes fadeOut{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+        transform:translateY(-10px) ;
+    }
+} 
+
